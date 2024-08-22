@@ -10,6 +10,9 @@ import { CartProvider } from './context/CartContext'; // Importa el proveedor de
 import Footer from './componentes/Footer'; // Importa el componente Footer
 import './styles/App.css';
 import Ubicacion from './componentes/Ubicacion';
+import AdminLogin from './componentes/AdminLogin';
+import AdminPanel from './componentes/AdminPanel';
+import PrivateRoute from './componentes/PrivateRoute'; // Importa el componente PrivateRoute
 
 function App() {
   return (
@@ -17,12 +20,24 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/" element={<ItemListContainer />} /> {/* Página principal */}
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/cart" element={<Cart />} /> {/* Ruta para el carrito */}
           <Route path="/product/:id" element={<ProductDetail />} /> {/* Ruta para detalles del producto */}
-          <Route path="*" element={<NotFound />} />
           <Route path="/ubicacion" element={<Ubicacion />} />
+          <Route path="/admin-login" element={<AdminLogin />} /> {/* Ruta para el login de administrador */}
+          
+          {/* Ruta protegida para el panel de administración */}
+          <Route 
+            path="/admin-panel" 
+            element={
+              <PrivateRoute>
+                <AdminPanel />
+              </PrivateRoute>
+            } 
+          />
+
+          <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
         </Routes>
         <Footer /> {/* Agrega el componente Footer */}
       </BrowserRouter>

@@ -4,12 +4,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Tu configuración de Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyCrlcCnRkfliVrXIMxQRIwxxeenX2Qq9sI",
-  authDomain: "flex-react-gutierrez.firebaseapp.com",
-  projectId: "flex-react-gutierrez",
-  storageBucket: "flex-react-gutierrez.appspot.com",
-  messagingSenderId: "263213262140",
-  appId: "1:263213262140:web:699bd43c03a213be47ea39",
+  apiKey: "AIzaSyC9mD-OzKeGo8zP3hSaVjKYpHrWk7Z0Cwo",
+  authDomain: "ventas-de-casa.firebaseapp.com",
+  projectId: "ventas-de-casa",
+  storageBucket: "ventas-de-casa.appspot.com",
+  messagingSenderId: "379532997796",
+  appId: "1:379532997796:web:b33f398f12070f82c32231",
+  measurementId: "G-WZ0WF4BZQ3"
 };
 
 // Inicializar Firebase

@@ -22,9 +22,16 @@ const Item = ({ item }) => {
             <p>{item.descripcion}</p>
           </div>
         )}
+
         <div className="card-actions">
-          <button className='button' onClick={() => addToCart(item)}>Agregar al carrito</button>
-          <button className='button' onClick={() => removeFromCart(item)}>Quitar del carrito</button>
+          {item.estado === "vendido" ? (
+            <div className="sold-banner">Vendido</div>
+          ) : (
+            <>
+              <button className="button" onClick={() => addToCart(item)}>Agregar al carrito</button>
+              <button className="button" onClick={() => removeFromCart(item)}>Quitar del carrito</button>
+            </>
+          )}
         </div>
       </div>
     </div>

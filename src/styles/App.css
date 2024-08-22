@@ -194,6 +194,11 @@ button:hover {
   background-color: var(--navbar-footer-bg-color);
 }
 
+.navbar img {
+  margin-bottom: 1rem;
+ 
+}
+
 
 
 .footer {
@@ -203,4 +208,47 @@ button:hover {
   text-align: center;
   border-top: 1px solid #ddd;
   color: #fff; /* Cambia el color del texto si es necesario */
+}
+
+
+/* Estilos para la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo y carrito deben estar en los extremos */
+.logo {
+  order: 1; /* Asegura que el logo esté en la parte izquierda */
+}
+
+.cart-widget {
+  order: 2; /* Asegura que el carrito esté en la parte derecha */
+  margin-left: auto; /* Empuja el carrito hacia la derecha */
+}
+
+/* Ajustes para el menú de hamburguesa */
+.navbar-toggler {
+  order: 3; /* Asegura que el botón del menú esté después del logo y carrito */
+}
+
+/* Asegura que el carrito esté alineado verticalmente con el logo */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 991px) {
+  .navbar .navbar-brand {
+    margin: 0;
+  }
 }

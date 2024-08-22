@@ -3,24 +3,28 @@ import { CartContext } from '../context/CartContext';
 
 const CategoryFilter = ({ onFilterChange }) => {
   const { productos } = useContext(CartContext);
-  const [selectedCategory, setSelectedCategory] = React.useState('');
+  const [selectedPriceRange, setSelectedPriceRange] = React.useState('');
 
-  // Obtener todas las categorías disponibles de los productos
+  // Obtener todos los rangos de precios disponibles de los productos
+  const priceRanges = [
+    'Menos de $10000',
+    '$10000.00 - $50000.00',
+    '$50000 - $100000',
+    'Más de $100000'
+  ];
 
-  const categories = [...new Set(productos.map(producto => producto.categoria))];
-
-  const handleCategoryChange = (event) => {
-    const category = event.target.value;
-    setSelectedCategory(category);
-    onFilterChange(category); // Llama a la función de actualización pasada como prop
+  const handlePriceChange = (event) => {
+    const priceRange = event.target.value;
+    setSelectedPriceRange(priceRange);
+    onFilterChange(priceRange); // Llama a la función de actualización pasada como prop
   };
 
   return (
     <div className="category-filter">
-      <select value={selectedCategory} onChange={handleCategoryChange}>
-        <option value=''>Todas las categorías</option>
-        {categories.map((category, index) => (
-          <option key={index} value={category}>{category}</option>
+      <select value={selectedPriceRange} onChange={handlePriceChange}>
+        <option value=''>Todos los precios</option>
+        {priceRanges.map((range, index) => (
+          <option key={index} value={range}>{range}</option>
         ))}
       </select>
     </div>

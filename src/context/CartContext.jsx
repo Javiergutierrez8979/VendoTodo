@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
-import { db } from '../firebase/Firebaseconfig'; // Importa la configuración de Firebase
+import { collection, getDocs, addDoc, updateDoc, doc } from 'firebase/firestore';
+import { db } from '../firebase/Firebaseconfig';
 
 // Crear el contexto
 export const CartContext = createContext();
@@ -37,20 +37,35 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  const finalizePurchase = async (name, phoneNumber) => {
+  const finalizePurchase = async (name, phone) => {
     try {
-      const orderCollection = collection(db, 'orders');
       const order = {
+        buyer: { name, phone },
         items: cartItems,
-        name,
-        phoneNumber,
-        createdAt: new Date(),
+        total: cartItems.reduce((total, item) => total + item.precio, 0),
+        date: new Date(),
       };
-      await addDoc(orderCollection, order);
-      console.log('Orden guardada en Firestore');
-      setCartItems([]); // Limpiar el carrito después de la compra
+
+      // Añade la orden a la colección "orders"
+      const docRef = await addDoc(collection(db, "orders"), order);
+
+      // Actualiza el estado de los productos a "vendido"
+      for (const item of cartItems) {
+        const productRef = doc(db, "productos", item.id);
+        await updateDoc(productRef, { estado: "vendido" });
+      }
+
+      // Limpiar el carrito después de la compra
+      setCartItems([]);
+
+      // Actualizar la lista de productos
+      fetchProductos();
+
+      // Retorna el ID de la orden creada
+      return docRef.id;
     } catch (error) {
-      console.error('Error finalizando la compra:', error);
+      console.error("Error al finalizar la compra:", error);
+      throw new Error("No se pudo guardar la orden.");
     }
   };
 

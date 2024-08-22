@@ -1,8 +1,7 @@
-// componentes/Cart.jsx
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
-import Swal from 'sweetalert2'; // Importa SweetAlert2
-import '../styles/Cart.css'; // Asegúrate de que el archivo de estilos esté en la ruta correcta
+import Swal from 'sweetalert2'; 
+import '../styles/Cart.css'; 
 
 const Cart = () => {
   const { cartItems, finalizePurchase } = useContext(CartContext);
@@ -26,14 +25,17 @@ const Cart = () => {
     }
 
     try {
-      await finalizePurchase(phone);
+      // Obtén el ID de la orden al finalizar la compra
+      const orderId = await finalizePurchase(name, phone);
 
-      // Muestra el mensaje de éxito sin el número de orden
+      // Muestra el mensaje de éxito con el ID de la orden
       Swal.fire({
         icon: 'success',
         title: 'Compra realizada con éxito!',
-        text: `Su compra ha sido procesada con éxito. El total de su compra es $${calculateTotal()}.`,
+        text: `Su compra ha sido procesada con éxito. El total de su compra es $${calculateTotal()}. Su ID de orden es: ${orderId}.`,
       });
+
+      
 
       // Limpia el formulario y el carrito
       setName('');

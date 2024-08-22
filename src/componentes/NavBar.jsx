@@ -10,8 +10,8 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-xl navbar-dark bg-secondary">
       <div className="container-fluid">
-        <Link to='/'>
-          <img src={Logo} width="60px" alt="Logo" />
+        <Link to='/' className="navbar-brand logo">
+          <img src={Logo} width="40rem" alt="Logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -30,19 +30,22 @@ function NavBar() {
               <Link className="nav-link active" aria-current="page" to='/'>Ventas</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to='/Contacto'>Contacto</Link>
+              <Link className="nav-link" to='/contacto'>Contacto</Link>
             </li>
             <li className="nav-item">
-  <Link className="nav-link" to="/ubicacion">Ubicación</Link>
-</li>
-
+              <Link className="nav-link" to='/admin-login'>Login</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to='/admin-panel'>Admin-Panel</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/ubicacion">Ubicación</Link>
+            </li>
           </ul>
-          <div className="d-flex">
-            <Link to='/cart' className="btn btn-outline-light">
-              <CartWidget />
-            </Link>
-          </div>
         </div>
+        <Link to='/cart' className="navbar-brand cart-widget">
+          <CartWidget />
+        </Link>
       </div>
     </nav>
   );
