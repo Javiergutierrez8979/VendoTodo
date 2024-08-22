@@ -22,3 +22,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Dependencias de Node.js
+node_modules/
+
+# Build de React
+build/
+
+# Variables de entorno
+.env
+
+# Archivos temporales
+*.log
+*.tmp
+
+# OS files
+.DS_Store
