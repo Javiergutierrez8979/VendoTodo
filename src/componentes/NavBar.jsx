@@ -8,7 +8,7 @@ function NavBar() {
   const { cartItems } = useContext(CartContext); // Usa el contexto para obtener los items del carrito
 
   return (
-    <nav className="navbar navbar-expand-xl navbar-dark bg-secondary">
+    <nav className="navbar navbar-expand-xl navbar-dark ">
       <div className="container-fluid">
         <Link to='/' className="navbar-brand logo">
           <img src={Logo} width="40rem" alt="Logo" />
