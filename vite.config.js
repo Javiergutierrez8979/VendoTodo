@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/VendoTodo/', // Cambia esto por tu nombre de repositorio
+  base: '/', // Cambia esto por tu nombre de repositorio
 });
