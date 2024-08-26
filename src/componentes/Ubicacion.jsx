@@ -4,17 +4,16 @@ import '../styles/Ubicacion.css'; // Asegúrate de tener este archivo CSS
 const Location = () => {
   return (
     <div className="location-page">
-      <h1>Visítanos en El Palomar</h1>
+      <h1>Entregas+
+         en El Palomar</h1>
       <p className="location-description">
-        Nos encontramos en una ubicación estratégica en El Palomar, Buenos Aires. Ofrecemos un ambiente cómodo y seguro para realizar tus compras. ¡Te esperamos!
+Para la entrega de los productos lo haremos previa coordinacion via telefonica en la zona de El Palomar. (No realizamos envios !!)
+
       </p>
       <div className="location-details">
-        <h3>Dirección:</h3>
-        <p>Calle Falsa 123, El Palomar, Buenos Aires</p>
         <h3>Horario de Atención:</h3>
         <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
         <p>Sábados: 10:00 AM - 2:00 PM</p>
-        <p>Domingos: Cerrado</p>
       </div>
       <div className="map-container">
         <iframe

@@ -1,15 +1,22 @@
 .footer {
-  color: #ddd;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
 
-    background-color:     color: #333;
-    ;
-    padding: 1rem;
-    text-align: center;
-    border-top: 1px solid #ddd;
-  }
-  
-  .footer p {
-    margin: 0;
-    color: #ddd;
-  }
-  
+.footer p {
+  margin: 0;
+}
+
+.linkedin-icon {
+  color: #0077b5;
+  margin-left: 1rem;
+  margin-top: 0;
+  transition: color 0.3s;
+}
+
+.linkedin-icon:hover {
+  color: #005582;
+}
