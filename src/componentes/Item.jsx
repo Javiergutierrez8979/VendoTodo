@@ -3,10 +3,26 @@ import { CartContext } from '../context/CartContext';
 import '../styles/Item.css';
 
 const Item = ({ item }) => {
-  const { addToCart, removeFromCart } = useContext(CartContext);
+  const { addToCart, removeFromCart, cartItems } = useContext(CartContext);
   const [showDetails, setShowDetails] = useState(false);
 
   const toggleDetails = () => setShowDetails(!showDetails);
+
+  // Verifica si el item ya está en el carrito
+  const itemInCart = cartItems.find(cartItem => cartItem.id === item.id);
+  const itemQuantity = itemInCart ? itemInCart.quantity : 0;
+
+  const handleAddToCart = () => {
+    if (itemQuantity === 0) {
+      addToCart({ ...item, quantity: 1 });
+    }
+  };
+
+  const handleRemoveFromCart = () => {
+    if (itemQuantity === 1) {
+      removeFromCart(item);
+    }
+  };
 
   return (
     <div className="item-card">
@@ -28,8 +44,15 @@ const Item = ({ item }) => {
             <div className="sold-banner">Vendido</div>
           ) : (
             <>
-              <button className="button" onClick={() => addToCart(item)}>Agregar al carrito</button>
-              <button className="button" onClick={() => removeFromCart(item)}>Quitar del carrito</button>
+              {itemQuantity === 0 ? (
+                <button className="button" onClick={handleAddToCart}>Agregar al carrito</button>
+              ) : (
+                <div className="quantity-control">
+                  <button className="button" onClick={handleRemoveFromCart}>-</button>
+                  <span className="quantity">{itemQuantity}</span>
+                  <button className="button" onClick={handleAddToCart} disabled={itemQuantity === 1}>+</button>
+                </div>
+              )}
             </>
           )}
         </div>

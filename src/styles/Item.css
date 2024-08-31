@@ -64,7 +64,6 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
-  margin: 0.5rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -95,11 +94,32 @@
   margin-top: auto;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Alineación centrada */
   padding-top: 1rem;
 }
 
-.card-actions button {
-  flex: 1;
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-control .button {
+  flex: none;
   margin: 0 0.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.quantity-control .quantity {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 1rem;
+  width: 30px;
+  text-align: center;
 }

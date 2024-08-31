@@ -189,6 +189,17 @@ button:hover {
   align-items: center;
 }
 
+/* Estilo para el título "Vendo Tutto" */
+.navbar-title {
+  padding-right: 38rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #74acdf 50%, #ffffff 50%, #ffffff 50%, #009246 50%); /* Colores de la bandera argentina e italiana */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
 /* Estilo para el menú desplegable */
 .collapse {
   flex-grow: 1; /* Ocupa el espacio disponible en el medio */
@@ -230,4 +241,19 @@ button:hover {
     align-items: center;
     width: 100%;
   }
+}
+.compra-compromiso {
+  background-color: #f8f9fa; /* Color de fondo suave */
+  border: 1px solid #dee2e6; /* Borde ligero */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 15px; /* Espaciado interno */
+  margin-bottom: 20px; /* Espaciado inferior para separar del contenido siguiente */
+  font-size: 16px; /* Tamaño de fuente */
+  color: #495057; /* Color de texto */
+  text-align: center; /* Alinear el texto al centro */
+}
+
+.compra-compromiso p {
+  margin: 0; /* Eliminar margen del párrafo */
+  line-height: 1.5; /* Altura de línea */
 }

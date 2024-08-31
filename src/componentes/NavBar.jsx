@@ -42,6 +42,7 @@ function NavBar() {
               <Link className="nav-link" to="/ubicacion">Ubicación</Link>
             </li>
           </ul>
+          <h1 className="navbar-title">Vendo Tutto</h1>
         </div>
         <Link to='/cart' className="navbar-brand cart-widget">
           <CartWidget />

@@ -62,6 +62,15 @@ const ItemListContainer = () => {
   return (
     <div className="item-list-container">
       <CategoryFilter onFilterChange={handleFilterChange} />
+
+      {/* Texto explicativo sobre el compromiso de compra */}
+      <div className="compra-compromiso">
+        <p>
+          La compra es un compromiso. Una vez finalizada la misma, nos pondremos en contacto 
+          para coordinar la entrega y el pago.
+        </p>
+      </div>
+
       <div className="item-list">
         {filteredProductos.length > 0 ? (
           filteredProductos.map((producto) => (
