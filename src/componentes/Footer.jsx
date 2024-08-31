@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/Footer.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import linkedinIcon from '../img/social_12942307.png'; // Ruta al icono local
 
 const Footer = () => {
   return (
@@ -13,7 +12,11 @@ const Footer = () => {
         rel="noopener noreferrer"
         className="linkedin-icon"
       >
-        <FontAwesomeIcon icon={faLinkedin} size="2x" />
+        <img
+          src={linkedinIcon}
+          alt="LinkedIn"
+          style={{ width: '2rem', height: '2rem' }} // Ajusta el tamaño del icono
+        />
       </a>
     </footer>
   );
