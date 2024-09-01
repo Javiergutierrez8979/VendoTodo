@@ -27,7 +27,7 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarDark">
           <ul className="navbar-nav me-auto mb-2 mb-xl-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to='/'>Ventas</Link>
+              <Link className="nav-link active" aria-current="page" to='/'>Productos</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to='/contacto'>Contacto</Link>
